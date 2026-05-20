@@ -848,9 +848,70 @@
       .skills { justify-content: center; }
     }
 
+    /* ── HAMBURGER ── */
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .4rem;
+      z-index: 200;
+    }
+    .nav-burger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
     @media (max-width: 640px) {
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { display: none; }
+      nav { padding: 0 1.25rem; }
+      .nav-burger { display: flex; }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 72px;
+        left: 0; right: 0;
+        background: white;
+        padding: 1.5rem 1.5rem 2rem;
+        gap: 0;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+
+      .nav-links li { border-bottom: 1px solid #f0f0f0; }
+      .nav-links li:last-child { border-bottom: none; margin-top: .75rem; }
+
+      .nav-links a {
+        display: block;
+        padding: .85rem .25rem;
+        font-size: 1.05rem;
+      }
+      .nav-links .lang-switch {
+        border-bottom: none;
+        padding: .75rem .25rem .25rem;
+        justify-content: flex-start;
+        gap: .4rem;
+      }
+      .nav-links .lang-switch button { font-size: 1rem; padding: .3rem .5rem; }
+      .nav-cta {
+        display: block;
+        text-align: center;
+        padding: .85rem 1.5rem !important;
+        margin-top: .25rem;
+      }
+
       .hero { padding: 7rem 1.25rem 4rem; }
       .about, .services, .about-jaco, .contact { padding: 4rem 1.25rem; }
     }
@@ -863,7 +924,10 @@
   <a href="#home" class="nav-logo">
     <img src="assets/logo.svg" alt="Qnext Data Analytics">
   </a>
-  <ul class="nav-links">
+  <button class="nav-burger" id="navBurger" aria-label="Menu openen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
     <li><a href="#about" data-ui="nav_about">Over Qnext</a></li>
     <li><a href="#services" data-ui="nav_services">Diensten</a></li>
@@ -1203,6 +1267,25 @@
       applyContent(d);
     })
     .catch(function() { applyUI(); });
+
+  // ── Hamburger menu ──
+  var burger = document.getElementById('navBurger');
+  var mobileMenu = document.getElementById('navLinks');
+  burger.addEventListener('click', function() {
+    var isOpen = mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  // Sluit menu bij klik op een link
+  mobileMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
 
   // Active nav on scroll
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
