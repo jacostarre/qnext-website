@@ -6,43 +6,21 @@ media_folder: assets
 public_folder: /assets
 display_url: https://www.qnext.nl
 
+# Toon direct de editor zonder bevestigingsstap
+publish_mode: simple
+
 collections:
   - name: "website"
     label: "Website inhoud"
     files:
-      - name: "content"
-        label: "✏️ Teksten & inhoud"
+
+      # ── Afbeeldingen ──────────────────────────────────────
+      - name: "afbeeldingen"
+        label: "🖼️  Afbeeldingen"
         file: "content.json"
         format: json
         fields:
-
-          - label: "🎯 Hero (bovenste sectie)"
-            name: "hero"
-            widget: "object"
-            fields:
-              - label: "Ondertitel"
-                name: "subtitle"
-                widget: "text"
-                hint: "De tekst onder Insight. Action. Growth."
-
-          - label: "📖 Over Qnext"
-            name: "about"
-            widget: "object"
-            fields:
-              - {label: "Titel", name: "title", widget: "string"}
-              - {label: "Tagline", name: "tagline", widget: "string"}
-              - {label: "Alinea 1", name: "text1", widget: "text"}
-              - {label: "Alinea 2", name: "text2", widget: "text"}
-
-          - label: "🛠️ Diensten"
-            name: "services"
-            widget: "list"
-            summary: "{{fields.title}}"
-            fields:
-              - {label: "Naam", name: "title", widget: "string"}
-              - {label: "Omschrijving", name: "description", widget: "text"}
-
-          - label: "🖼️ Afbeeldingen"
+          - label: "Afbeeldingen"
             name: "images"
             widget: "object"
             fields:
@@ -56,29 +34,189 @@ collections:
                 widget: "image"
                 required: false
                 hint: "Aanbevolen: vierkant, minimaal 600×600px"
+          - label: "NL (verborgen)"
+            name: "nl"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "x", name: "hero", widget: "object", fields: [{label: "x", name: "subtitle", widget: "text"}]}
+              - {label: "x", name: "about", widget: "object", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "tagline", widget: "string"},{label: "x", name: "text1", widget: "text"},{label: "x", name: "text2", widget: "text"}]}
+              - {label: "x", name: "services", widget: "list", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "description", widget: "text"}]}
+              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", widget: "string"}}]}
+              - {label: "x", name: "faq", widget: "list", fields: [{label: "x", name: "question", widget: "string"},{label: "x", name: "answer", widget: "text"}]}
+              - {label: "x", name: "contact", widget: "object", fields: [{label: "x", name: "intro", widget: "text"}]}
+          - label: "EN (verborgen)"
+            name: "en"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "x", name: "hero", widget: "object", fields: [{label: "x", name: "subtitle", widget: "text"}]}
+              - {label: "x", name: "about", widget: "object", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "tagline", widget: "string"},{label: "x", name: "text1", widget: "text"},{label: "x", name: "text2", widget: "text"}]}
+              - {label: "x", name: "services", widget: "list", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "description", widget: "text"}]}
+              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", widget: "string"}}]}
+              - {label: "x", name: "faq", widget: "list", fields: [{label: "x", name: "question", widget: "string"},{label: "x", name: "answer", widget: "text"}]}
+              - {label: "x", name: "contact", widget: "object", fields: [{label: "x", name: "intro", widget: "text"}]}
 
-          - label: "👤 Over mij"
-            name: "jaco"
+      # ── Nederlands ────────────────────────────────────────
+      - name: "nl"
+        label: "🇳🇱  Nederlands"
+        file: "content.json"
+        format: json
+        fields:
+          - label: "🎯 Hero — ondertitel"
+            name: "nl"
             widget: "object"
             fields:
-              - {label: "Alinea 1", name: "bio1", widget: "text"}
-              - {label: "Alinea 2", name: "bio2", widget: "text"}
-              - label: "Skills"
-                name: "skills"
+              - label: "Hero"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - label: "Ondertitel"
+                    name: "subtitle"
+                    widget: "text"
+                    hint: "De tekst onder Insight. Action. Growth."
+
+              - label: "Over Qnext"
+                name: "about"
+                widget: "object"
+                fields:
+                  - {label: "Titel", name: "title", widget: "string"}
+                  - {label: "Tagline", name: "tagline", widget: "string"}
+                  - {label: "Alinea 1", name: "text1", widget: "text"}
+                  - {label: "Alinea 2", name: "text2", widget: "text"}
+
+              - label: "Diensten"
+                name: "services"
                 widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Naam", name: "title", widget: "string"}
+                  - {label: "Omschrijving", name: "description", widget: "text"}
+
+              - label: "Over mij"
+                name: "jaco"
+                widget: "object"
+                fields:
+                  - {label: "Alinea 1", name: "bio1", widget: "text"}
+                  - {label: "Alinea 2", name: "bio2", widget: "text"}
+                  - label: "Skills"
+                    name: "skills"
+                    widget: "list"
+                    allow_add: true
+                    field: {label: "Skill", widget: "string"}
+
+              - label: "FAQ"
+                name: "faq"
+                widget: "list"
+                summary: "{{fields.question}}"
                 allow_add: true
-                field: {label: "Skill", name: "item", widget: "string"}
+                fields:
+                  - {label: "Vraag", name: "question", widget: "string"}
+                  - {label: "Antwoord", name: "answer", widget: "text"}
 
-          - label: "❓ FAQ"
-            name: "faq"
-            widget: "list"
-            summary: "{{fields.question}}"
+              - label: "Contact"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - {label: "Intro tekst", name: "intro", widget: "text"}
+
+          - label: "EN (behoud)"
+            name: "en"
+            widget: "object"
+            collapsed: true
             fields:
-              - {label: "Vraag", name: "question", widget: "string"}
-              - {label: "Antwoord", name: "answer", widget: "text"}
+              - {label: "x", name: "hero", widget: "object", fields: [{label: "x", name: "subtitle", widget: "text"}]}
+              - {label: "x", name: "about", widget: "object", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "tagline", widget: "string"},{label: "x", name: "text1", widget: "text"},{label: "x", name: "text2", widget: "text"}]}
+              - {label: "x", name: "services", widget: "list", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "description", widget: "text"}]}
+              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", widget: "string"}}]}
+              - {label: "x", name: "faq", widget: "list", fields: [{label: "x", name: "question", widget: "string"},{label: "x", name: "answer", widget: "text"}]}
+              - {label: "x", name: "contact", widget: "object", fields: [{label: "x", name: "intro", widget: "text"}]}
+          - label: "Afbeeldingen (behoud)"
+            name: "images"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "x", name: "foto_about", widget: "image", required: false}
+              - {label: "x", name: "foto_jaco", widget: "image", required: false}
 
-          - label: "📞 Contact"
-            name: "contact"
+      # ── Engels ────────────────────────────────────────────
+      - name: "en"
+        label: "🇬🇧  English"
+        file: "content.json"
+        format: json
+        fields:
+          - label: "English content"
+            name: "en"
             widget: "object"
             fields:
-              - {label: "Intro tekst", name: "intro", widget: "text"}
+              - label: "Hero — subtitle"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - label: "Subtitle"
+                    name: "subtitle"
+                    widget: "text"
+                    hint: "Text below Insight. Action. Growth."
+
+              - label: "About Qnext"
+                name: "about"
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Tagline", name: "tagline", widget: "string"}
+                  - {label: "Paragraph 1", name: "text1", widget: "text"}
+                  - {label: "Paragraph 2", name: "text2", widget: "text"}
+
+              - label: "Services"
+                name: "services"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Name", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+
+              - label: "About me"
+                name: "jaco"
+                widget: "object"
+                fields:
+                  - {label: "Paragraph 1", name: "bio1", widget: "text"}
+                  - {label: "Paragraph 2", name: "bio2", widget: "text"}
+                  - label: "Skills"
+                    name: "skills"
+                    widget: "list"
+                    allow_add: true
+                    field: {label: "Skill", widget: "string"}
+
+              - label: "FAQ"
+                name: "faq"
+                widget: "list"
+                summary: "{{fields.question}}"
+                allow_add: true
+                fields:
+                  - {label: "Question", name: "question", widget: "string"}
+                  - {label: "Answer", name: "answer", widget: "text"}
+
+              - label: "Contact"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - {label: "Intro text", name: "intro", widget: "text"}
+
+          - label: "NL (preserve)"
+            name: "nl"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "x", name: "hero", widget: "object", fields: [{label: "x", name: "subtitle", widget: "text"}]}
+              - {label: "x", name: "about", widget: "object", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "tagline", widget: "string"},{label: "x", name: "text1", widget: "text"},{label: "x", name: "text2", widget: "text"}]}
+              - {label: "x", name: "services", widget: "list", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "description", widget: "text"}]}
+              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", widget: "string"}}]}
+              - {label: "x", name: "faq", widget: "list", fields: [{label: "x", name: "question", widget: "string"},{label: "x", name: "answer", widget: "text"}]}
+              - {label: "x", name: "contact", widget: "object", fields: [{label: "x", name: "intro", widget: "text"}]}
+          - label: "Images (preserve)"
+            name: "images"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "x", name: "foto_about", widget: "image", required: false}
+              - {label: "x", name: "foto_jaco", widget: "image", required: false}
