@@ -1,0 +1,63 @@
+{
+  "images": {
+    "foto_about": "/assets/jaco.jpg",
+    "foto_jaco": "/assets/jaco2.jpg"
+  },
+  "hero": {
+    "subtitle": "Qnext helpt middelgrote organisaties succesvol AI en datagericht werken — van concreet businessprobleem naar werkbare oplossing."
+  },
+  "about": {
+    "title": "Welkom bij Qnext.",
+    "tagline": "Smart insights. Strong decisions.",
+    "text1": "Data heeft enorme waarde — maar alleen als je er iets mee doet. Bij Qnext vertalen we complexe data naar concrete inzichten die jouw organisatie écht verder helpen.",
+    "text2": "We richten ons op middelgrote bedrijven die klaar zijn voor de volgende stap: datagedreven werken, slimmer beslissen en AI effectief inzetten. Geen hype, maar een echte bedrijfstool met direct resultaat."
+  },
+  "services": [
+    {
+      "title": "Business Intelligence",
+      "description": "Inzicht in uw data met Power BI-rapportages en maatwerkdatamodellen. Wij zetten ruwe data om in heldere dashboards die uw team dagelijks gebruikt om betere beslissingen te nemen."
+    },
+    {
+      "title": "Strategy & Consulting",
+      "description": "Datagedreven strategieën en bedrijfsmodellen voor duurzame groei. We helpen u AI en data structureel te verankeren in uw organisatie — van visie tot implementatie."
+    },
+    {
+      "title": "Data Storytelling",
+      "description": "Complexe inzichten vertaald naar heldere verhalen die aanzetten tot actie. Zodat iedereen in uw organisatie begrijpt wat de data zegt — en wat u ermee moet doen."
+    }
+  ],
+  "jaco": {
+    "bio1": "Ik ben een analytisch sterke professional met ruime ervaring in financiën, governance en strategisch leiderschap. Als voormalig Operations & Finance Director heb ik organisaties zien groeien en weet ik wat in de praktijk écht werkt.",
+    "bio2": "Qnext heb ik opgericht vanuit de overtuiging dat middelgrote bedrijven enorm kunnen profiteren van datagedreven werken — mits het op de juiste manier wordt aangepakt. Geen ingewikkeld jargon, maar concrete oplossingen die aansluiten op uw business.",
+    "skills": ["Strategisch denken", "Business Intelligence", "Power BI", "Analytisch vermogen", "Stakeholder management", "Finance & Governance", "AI-implementatie"]
+  },
+  "faq": [
+    {
+      "question": "Wat doet Qnext?",
+      "answer": "Qnext helpt middelgrote organisaties succesvol AI en datagericht werken. Concrete business problemen worden omgezet in werkbare oplossingen via Business Intelligence, Strategy & Consulting en Data Storytelling."
+    },
+    {
+      "question": "Voor welke bedrijven werkt Qnext?",
+      "answer": "Qnext richt zich op middelgrote bedrijven in Nederland die klaar zijn voor de volgende stap: datagedreven werken, slimmer beslissen en AI effectief inzetten in de dagelijkse praktijk."
+    },
+    {
+      "question": "Wat is Business Intelligence en wat levert het op?",
+      "answer": "Business Intelligence (BI) is het verzamelen, analyseren en visualiseren van bedrijfsdata zodat managers sneller en beter kunnen beslissen. Qnext bouwt Power BI-dashboards en maatwerkdatamodellen die dagelijks bruikbaar zijn voor uw team."
+    },
+    {
+      "question": "Hoe kan AI mijn bedrijf helpen?",
+      "answer": "AI kan processen automatiseren, patronen in data ontdekken en voorspellingen doen die handmatig niet haalbaar zijn. Qnext helpt bij het concreet en verantwoord toepassen van AI in uw bedrijfsprocessen — zonder hype, maar met aantoonbaar resultaat."
+    },
+    {
+      "question": "Wat maakt Qnext anders dan andere data consultants?",
+      "answer": "Jaco van der Starre combineert diepgaande data-expertise met jarenlange ervaring als Operations & Finance Director. Daardoor begrijpt Qnext niet alleen de data, maar ook de business erachter — en worden oplossingen gebouwd die in de praktijk écht werken."
+    },
+    {
+      "question": "Hoe neem ik contact op?",
+      "answer": "U kunt Qnext bereiken via e-mail (jaco@qnext.nl), telefoon (+316 49 49 77 77) of via het contactformulier op deze pagina. Een vrijblijvend kennismakingsgesprek is altijd mogelijk."
+    }
+  ],
+  "contact": {
+    "intro": "Wil je weten wat Qnext voor jouw organisatie kan betekenen? Neem gerust contact op — een vrijblijvend gesprek is altijd mogelijk."
+  }
+}

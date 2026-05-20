@@ -1,0 +1,84 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: assets
+public_folder: /assets
+display_url: https://www.qnext.nl
+
+collections:
+  - name: "website"
+    label: "Website inhoud"
+    files:
+      - name: "content"
+        label: "✏️ Teksten & inhoud"
+        file: "content.json"
+        format: json
+        fields:
+
+          - label: "🎯 Hero (bovenste sectie)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Ondertitel"
+                name: "subtitle"
+                widget: "text"
+                hint: "De tekst onder Insight. Action. Growth."
+
+          - label: "📖 Over Qnext"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Tagline", name: "tagline", widget: "string"}
+              - {label: "Alinea 1", name: "text1", widget: "text"}
+              - {label: "Alinea 2", name: "text2", widget: "text"}
+
+          - label: "🛠️ Diensten"
+            name: "services"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Naam", name: "title", widget: "string"}
+              - {label: "Omschrijving", name: "description", widget: "text"}
+
+          - label: "🖼️ Afbeeldingen"
+            name: "images"
+            widget: "object"
+            fields:
+              - label: "Foto — Over Qnext sectie"
+                name: "foto_about"
+                widget: "image"
+                required: false
+                hint: "Aanbevolen: vierkant, minimaal 600×600px"
+              - label: "Foto — Over mij sectie"
+                name: "foto_jaco"
+                widget: "image"
+                required: false
+                hint: "Aanbevolen: vierkant, minimaal 600×600px"
+
+          - label: "👤 Over mij"
+            name: "jaco"
+            widget: "object"
+            fields:
+              - {label: "Alinea 1", name: "bio1", widget: "text"}
+              - {label: "Alinea 2", name: "bio2", widget: "text"}
+              - label: "Skills"
+                name: "skills"
+                widget: "list"
+                allow_add: true
+                field: {label: "Skill", name: "item", widget: "string"}
+
+          - label: "❓ FAQ"
+            name: "faq"
+            widget: "list"
+            summary: "{{fields.question}}"
+            fields:
+              - {label: "Vraag", name: "question", widget: "string"}
+              - {label: "Antwoord", name: "answer", widget: "text"}
+
+          - label: "📞 Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Intro tekst", name: "intro", widget: "text"}
