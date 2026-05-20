@@ -227,7 +227,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Fonts asynchroon laden — voorkomt render-blocking -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@400;500;600&display=swap"></noscript>
   <style>
     :root {
       --navy:     #0f1f42;
@@ -922,7 +924,7 @@
 <!-- ── NAVBAR ── -->
 <nav>
   <a href="#home" class="nav-logo">
-    <img src="assets/logo.svg" alt="Qnext Data Analytics">
+    <img src="assets/logo.svg" alt="Qnext Data Analytics" width="180" height="72" fetchpriority="high">
   </a>
   <button class="nav-burger" id="navBurger" aria-label="Menu openen" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -947,7 +949,7 @@
   <div class="hero-dec-1"></div>
   <div class="hero-dec-2"></div>
   <div class="hero-dec-3"></div>
-  <img src="assets/logo-wit.svg" class="hero-logo" alt="Qnext">
+  <img src="assets/logo-wit.svg" class="hero-logo" alt="Qnext" fetchpriority="high" width="320" height="100">
   <div class="hero-content">
     <h1>Insight.<br>Action.<br>Growth.</h1>
     <p id="hero-subtitle">Qnext helpt middelgrote organisaties succesvol AI en datagericht werken — van concreet business&shy;probleem naar werkbare oplossing.</p>
@@ -970,7 +972,7 @@
     </div>
     <div class="about-photo">
       <div class="photo-ring">
-        <img id="img-about" src="assets/jaco.jpg" alt="Jaco van der Starre — Qnext">
+        <img id="img-about" src="assets/jaco.jpg" alt="Jaco van der Starre — Qnext" loading="lazy" width="560" height="560">
       </div>
     </div>
   </div>
@@ -1026,7 +1028,7 @@
 <!-- ── OVER JACO ── -->
 <section class="about-jaco" id="jaco">
   <div class="about-jaco-inner">
-    <img id="img-jaco" src="assets/jaco2.jpg" class="jaco-img" alt="Jaco van der Starre" onerror="this.src='assets/jaco.jpg'">
+    <img id="img-jaco" src="assets/jaco2.jpg" class="jaco-img" alt="Jaco van der Starre" loading="lazy" width="480" height="480" onerror="this.src='assets/jaco.jpg'">
     <div>
       <h2>Jaco van der Starre</h2>
       <p class="jaco-role" data-ui="jaco_role">Oprichter &amp; Data Analytics Consultant</p>
@@ -1105,12 +1107,12 @@
 
 <!-- ── FOOTER ── -->
 <footer>
-  <img src="assets/logo-wit.svg" alt="Qnext Data Analytics">
+  <img src="assets/logo-wit.svg" alt="Qnext Data Analytics" loading="lazy" width="200" height="64">
   <div>© 2025 Qnext<span class="sep">|</span>KVK 97289477<span class="sep">|</span>BTW NL001800337B17</div>
   <div style="margin-top:.35rem;">Zijde 428, 2771 GA Boskoop<span class="sep">|</span><a href="mailto:jaco@qnext.nl">jaco@qnext.nl</a></div>
 </footer>
 
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 <script>
   // Netlify Identity redirect na login
   if (window.netlifyIdentity) {
