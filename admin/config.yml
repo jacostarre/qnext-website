@@ -42,7 +42,7 @@ collections:
               - {label: "x", name: "hero", widget: "object", fields: [{label: "x", name: "subtitle", widget: "text"}]}
               - {label: "x", name: "about", widget: "object", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "tagline", widget: "string"},{label: "x", name: "text1", widget: "text"},{label: "x", name: "text2", widget: "text"}]}
               - {label: "x", name: "services", widget: "list", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "description", widget: "text"}]}
-              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", widget: "string"}}]}
+              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", name: "value", widget: "string"}}]}
               - {label: "x", name: "faq", widget: "list", fields: [{label: "x", name: "question", widget: "string"},{label: "x", name: "answer", widget: "text"}]}
               - {label: "x", name: "contact", widget: "object", fields: [{label: "x", name: "intro", widget: "text"}]}
           - label: "EN (verborgen)"
@@ -53,7 +53,7 @@ collections:
               - {label: "x", name: "hero", widget: "object", fields: [{label: "x", name: "subtitle", widget: "text"}]}
               - {label: "x", name: "about", widget: "object", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "tagline", widget: "string"},{label: "x", name: "text1", widget: "text"},{label: "x", name: "text2", widget: "text"}]}
               - {label: "x", name: "services", widget: "list", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "description", widget: "text"}]}
-              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", widget: "string"}}]}
+              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", name: "value", widget: "string"}}]}
               - {label: "x", name: "faq", widget: "list", fields: [{label: "x", name: "question", widget: "string"},{label: "x", name: "answer", widget: "text"}]}
               - {label: "x", name: "contact", widget: "object", fields: [{label: "x", name: "intro", widget: "text"}]}
 
@@ -103,7 +103,7 @@ collections:
                     name: "skills"
                     widget: "list"
                     allow_add: true
-                    field: {label: "Skill", widget: "string"}
+                    field: {label: "Skill", name: "value", widget: "string"}
 
               - label: "FAQ"
                 name: "faq"
@@ -128,7 +128,7 @@ collections:
               - {label: "x", name: "hero", widget: "object", fields: [{label: "x", name: "subtitle", widget: "text"}]}
               - {label: "x", name: "about", widget: "object", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "tagline", widget: "string"},{label: "x", name: "text1", widget: "text"},{label: "x", name: "text2", widget: "text"}]}
               - {label: "x", name: "services", widget: "list", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "description", widget: "text"}]}
-              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", widget: "string"}}]}
+              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", name: "value", widget: "string"}}]}
               - {label: "x", name: "faq", widget: "list", fields: [{label: "x", name: "question", widget: "string"},{label: "x", name: "answer", widget: "text"}]}
               - {label: "x", name: "contact", widget: "object", fields: [{label: "x", name: "intro", widget: "text"}]}
           - label: "Afbeeldingen (behoud)"
@@ -185,7 +185,7 @@ collections:
                     name: "skills"
                     widget: "list"
                     allow_add: true
-                    field: {label: "Skill", widget: "string"}
+                    field: {label: "Skill", name: "value", widget: "string"}
 
               - label: "FAQ"
                 name: "faq"
@@ -210,7 +210,7 @@ collections:
               - {label: "x", name: "hero", widget: "object", fields: [{label: "x", name: "subtitle", widget: "text"}]}
               - {label: "x", name: "about", widget: "object", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "tagline", widget: "string"},{label: "x", name: "text1", widget: "text"},{label: "x", name: "text2", widget: "text"}]}
               - {label: "x", name: "services", widget: "list", fields: [{label: "x", name: "title", widget: "string"},{label: "x", name: "description", widget: "text"}]}
-              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", widget: "string"}}]}
+              - {label: "x", name: "jaco", widget: "object", fields: [{label: "x", name: "bio1", widget: "text"},{label: "x", name: "bio2", widget: "text"},{label: "x", name: "skills", widget: "list", field: {label: "Skill", name: "value", widget: "string"}}]}
               - {label: "x", name: "faq", widget: "list", fields: [{label: "x", name: "question", widget: "string"},{label: "x", name: "answer", widget: "text"}]}
               - {label: "x", name: "contact", widget: "object", fields: [{label: "x", name: "intro", widget: "text"}]}
           - label: "Images (preserve)"
