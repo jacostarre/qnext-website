@@ -10,6 +10,9 @@
   <meta name="keywords" content="data analytics, business intelligence, Power BI, data consultant, AI strategie, datagedreven werken, middelgrote bedrijven, Boskoop, Nederland, data storytelling">
   <meta name="author" content="Jaco van der Starre">
   <link rel="canonical" href="https://www.qnext.nl/">
+  <link rel="alternate" hreflang="nl" href="https://www.qnext.nl/">
+  <link rel="alternate" hreflang="en" href="https://www.qnext.nl/">
+  <link rel="alternate" hreflang="x-default" href="https://www.qnext.nl/">
 
   <!-- Open Graph (LinkedIn, WhatsApp, Facebook previews) -->
   <meta property="og:type" content="website">
@@ -221,6 +224,28 @@
       transition: background .2s, transform .2s !important;
     }
     .nav-cta:hover { background: var(--navy) !important; transform: translateY(-1px); }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: .25rem;
+      font-size: .85rem;
+      font-weight: 700;
+    }
+    .lang-switch button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: .85rem;
+      color: #aaa;
+      padding: .2rem .35rem;
+      border-radius: 4px;
+      transition: color .2s;
+    }
+    .lang-switch button.active { color: var(--blue); }
+    .lang-switch button:hover { color: var(--navy); }
+    .lang-switch span { color: #ddd; }
 
     /* ── HERO ── */
     .hero {
@@ -774,11 +799,16 @@
   </a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
-    <li><a href="#about">Over Qnext</a></li>
-    <li><a href="#services">Diensten</a></li>
-    <li><a href="#jaco">Over mij</a></li>
+    <li><a href="#about" data-ui="nav_about">Over Qnext</a></li>
+    <li><a href="#services" data-ui="nav_services">Diensten</a></li>
+    <li><a href="#jaco" data-ui="nav_jaco">Over mij</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
+    <li class="lang-switch">
+      <button onclick="setLang('nl')" data-lang="nl" class="active">NL</button>
+      <span>|</span>
+      <button onclick="setLang('en')" data-lang="en">EN</button>
+    </li>
+    <li><a href="#contact" class="nav-cta" data-ui="nav_contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -792,7 +822,7 @@
     <h1>Insight.<br>Action.<br>Growth.</h1>
     <p id="hero-subtitle">Qnext helpt middelgrote organisaties succesvol AI en datagericht werken — van concreet business&shy;probleem naar werkbare oplossing.</p>
     <a href="#services" class="btn-primary">
-      Ontdek onze diensten
+      <span data-ui="hero_btn">Ontdek onze diensten</span>
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
   </div>
@@ -806,7 +836,7 @@
       <p class="tagline" id="about-tagline">Smart insights. Strong decisions.</p>
       <p id="about-text1">Data heeft enorme waarde — maar alleen als je er iets mee doet. Bij Qnext vertalen we complexe data naar concrete inzichten die jouw organisatie écht verder helpen.</p>
       <p id="about-text2">We richten ons op middelgrote bedrijven die klaar zijn voor de volgende stap: datagedreven werken, slimmer beslissen en AI effectief inzetten. Geen hype, maar een echte bedrijfstool met direct resultaat.</p>
-      <a href="#services" class="btn-primary" style="margin-top:1.25rem;">Meer weten</a>
+      <a href="#services" class="btn-primary" style="margin-top:1.25rem;"><span data-ui="about_btn">Meer weten</span></a>
     </div>
     <div class="about-photo">
       <div class="photo-ring">
@@ -819,8 +849,8 @@
 <!-- ── DIENSTEN ── -->
 <section class="services" id="services">
   <div class="section-head">
-    <span class="pill">Diensten</span>
-    <h2>Van data naar beslissingen die het verschil maken</h2>
+    <span class="pill" data-ui="nav_services">Diensten</span>
+    <h2 data-ui="services_heading">Van data naar beslissingen die het verschil maken</h2>
   </div>
   <div class="services-grid">
 
@@ -869,7 +899,7 @@
     <img id="img-jaco" src="assets/jaco2.jpg" class="jaco-img" alt="Jaco van der Starre" onerror="this.src='assets/jaco.jpg'">
     <div>
       <h2>Jaco van der Starre</h2>
-      <p class="jaco-role">Oprichter &amp; Data Analytics Consultant</p>
+      <p class="jaco-role" data-ui="jaco_role">Oprichter &amp; Data Analytics Consultant</p>
       <p id="jaco-bio1">Ik ben een analytisch sterke professional met ruime ervaring in financiën, governance en strategisch leiderschap. Als voormalig Operations &amp; Finance Director heb ik organisaties zien groeien en weet ik wat in de praktijk écht werkt.</p>
       <p id="jaco-bio2">Qnext heb ik opgericht vanuit de overtuiging dat middelgrote bedrijven enorm kunnen profiteren van datagedreven werken — mits het op de juiste manier wordt aangepakt. Geen ingewikkeld jargon, maar concrete oplossingen die aansluiten op uw business.</p>
       <div class="skills" id="jaco-skills">
@@ -888,8 +918,8 @@
 <!-- ── FAQ ── -->
 <section class="faq" id="faq">
   <div class="faq-inner">
-    <h2>Veelgestelde vragen</h2>
-    <p class="faq-intro">Alles wat u wilt weten over datagedreven werken en samenwerken met Qnext.</p>
+    <h2 data-ui="faq_heading">Veelgestelde vragen</h2>
+    <p class="faq-intro" data-ui="faq_intro">Alles wat u wilt weten over datagedreven werken en samenwerken met Qnext.</p>
 
     <div id="faq-list"></div>
 
@@ -927,14 +957,14 @@
       <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact">
         <input type="hidden" name="bot-field" style="display:none">
-        <input type="text" name="naam" placeholder="Uw naam" required>
-        <input type="email" name="email" placeholder="Uw e-mailadres" required>
-        <textarea name="bericht" placeholder="Uw bericht — waar kunnen we u mee helpen?"></textarea>
+        <input type="text" name="naam" data-ui="form_name" placeholder="Uw naam" required>
+        <input type="email" name="email" data-ui="form_email" placeholder="Uw e-mailadres" required>
+        <textarea name="bericht" data-ui="form_message" placeholder="Uw bericht — waar kunnen we u mee helpen?"></textarea>
         <button type="submit" id="form-btn">
-          Verstuur bericht
+          <span data-ui="form_btn">Verstuur bericht</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
-        <p id="form-success" style="display:none; color:white; font-weight:600; margin-top:.75rem;">
+        <p id="form-success" style="display:none; color:white; font-weight:600; margin-top:.75rem;" data-ui="form_success">
           ✓ Bedankt! Uw bericht is verstuurd. Ik neem zo snel mogelijk contact op.
         </p>
       </form>
@@ -963,10 +993,122 @@
   }
 </script>
 <script>
-  // ── CMS content laden uit content.json ──
+  // ── Vertalingen voor vaste UI-teksten ──
+  var UI = {
+    nl: {
+      nav_about: 'Over Qnext', nav_services: 'Diensten', nav_jaco: 'Over mij',
+      nav_contact: 'Contact', hero_btn: 'Ontdek onze diensten', about_btn: 'Meer weten',
+      services_heading: 'Van data naar beslissingen die het verschil maken',
+      jaco_role: 'Oprichter & Data Analytics Consultant',
+      faq_heading: 'Veelgestelde vragen',
+      faq_intro: 'Alles wat u wilt weten over datagedreven werken en samenwerken met Qnext.',
+      form_name: 'Uw naam', form_email: 'Uw e-mailadres',
+      form_message: 'Uw bericht — waar kunnen we u mee helpen?',
+      form_btn: 'Verstuur bericht', form_sending: 'Versturen...',
+      form_success: '✓ Bedankt! Uw bericht is verstuurd. Ik neem zo snel mogelijk contact op.',
+      form_error: 'Er ging iets mis — probeer opnieuw'
+    },
+    en: {
+      nav_about: 'About Qnext', nav_services: 'Services', nav_jaco: 'About me',
+      nav_contact: 'Contact', hero_btn: 'Discover our services', about_btn: 'Learn more',
+      services_heading: 'From data to decisions that make the difference',
+      jaco_role: 'Founder & Data Analytics Consultant',
+      faq_heading: 'Frequently asked questions',
+      faq_intro: 'Everything you want to know about data-driven working and collaborating with Qnext.',
+      form_name: 'Your name', form_email: 'Your email address',
+      form_message: 'Your message — how can we help you?',
+      form_btn: 'Send message', form_sending: 'Sending...',
+      form_success: '✓ Thank you! Your message has been sent. I will get back to you as soon as possible.',
+      form_error: 'Something went wrong — please try again'
+    }
+  };
+
+  // ── Taaldetectie ──
+  var lang = localStorage.getItem('qnext-lang') ||
+             (navigator.language && navigator.language.toLowerCase().startsWith('en') ? 'en' : 'nl');
+
+  var cmsData = null;
+
   function setText(id, val) {
     var el = document.getElementById(id);
     if (el && val) el.textContent = val;
+  }
+
+  function applyUI() {
+    var t = UI[lang];
+    // Vaste teksten via data-ui attribuut
+    document.querySelectorAll('[data-ui]').forEach(function(el) {
+      var key = el.getAttribute('data-ui');
+      if (!t[key]) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = t[key];
+      } else {
+        el.textContent = t[key];
+      }
+    });
+    // Taalknop actief-staat
+    document.querySelectorAll('.lang-switch button').forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+    // HTML lang attribuut
+    document.documentElement.lang = lang;
+  }
+
+  function applyContent(d) {
+    var c = d[lang];
+    if (!c) return;
+    if (c.hero)    setText('hero-subtitle', c.hero.subtitle);
+    if (c.about) {
+      setText('about-title',   c.about.title);
+      setText('about-tagline', c.about.tagline);
+      setText('about-text1',   c.about.text1);
+      setText('about-text2',   c.about.text2);
+    }
+    if (c.services) {
+      c.services.forEach(function(s, i) {
+        setText('svc-' + (i + 1) + '-title', s.title);
+        setText('svc-' + (i + 1) + '-desc',  s.description);
+      });
+    }
+    if (c.jaco) {
+      setText('jaco-bio1', c.jaco.bio1);
+      setText('jaco-bio2', c.jaco.bio2);
+      if (c.jaco.skills) {
+        var skillsEl = document.getElementById('jaco-skills');
+        if (skillsEl) {
+          skillsEl.innerHTML = c.jaco.skills.map(function(s) {
+            return '<span class="skill">' + s + '</span>';
+          }).join('');
+        }
+      }
+    }
+    if (c.faq) {
+      var faqList = document.getElementById('faq-list');
+      if (faqList) {
+        faqList.innerHTML = c.faq.map(function(item) {
+          return '<div class="faq-item">' +
+            '<button class="faq-question" aria-expanded="false">' +
+            item.question + '<span class="faq-icon">+</span></button>' +
+            '<div class="faq-answer"><p>' + item.answer + '</p></div></div>';
+        }).join('');
+        initFAQ();
+      }
+    }
+    if (c.contact) setText('contact-intro', c.contact.intro);
+    // Afbeeldingen (taal-onafhankelijk)
+    if (d.images) {
+      var imgAbout = document.getElementById('img-about');
+      if (imgAbout && d.images.foto_about) imgAbout.src = d.images.foto_about;
+      var imgJaco = document.getElementById('img-jaco');
+      if (imgJaco && d.images.foto_jaco) imgJaco.src = d.images.foto_jaco;
+    }
+  }
+
+  function setLang(l) {
+    lang = l;
+    localStorage.setItem('qnext-lang', l);
+    applyUI();
+    if (cmsData) applyContent(cmsData);
   }
 
   function initFAQ() {
@@ -986,63 +1128,15 @@
     });
   }
 
+  // ── Laad content.json en pas toe ──
   fetch('/content.json')
     .then(function(r) { return r.json(); })
     .then(function(d) {
-      // Hero
-      if (d.hero) setText('hero-subtitle', d.hero.subtitle);
-      // Over Qnext
-      if (d.about) {
-        setText('about-title', d.about.title);
-        setText('about-tagline', d.about.tagline);
-        setText('about-text1', d.about.text1);
-        setText('about-text2', d.about.text2);
-      }
-      // Diensten
-      if (d.services) {
-        d.services.forEach(function(s, i) {
-          setText('svc-' + (i + 1) + '-title', s.title);
-          setText('svc-' + (i + 1) + '-desc', s.description);
-        });
-      }
-      // Over Jaco
-      if (d.jaco) {
-        setText('jaco-bio1', d.jaco.bio1);
-        setText('jaco-bio2', d.jaco.bio2);
-        if (d.jaco.skills) {
-          var skillsEl = document.getElementById('jaco-skills');
-          if (skillsEl) {
-            skillsEl.innerHTML = d.jaco.skills.map(function(s) {
-              return '<span class="skill">' + s + '</span>';
-            }).join('');
-          }
-        }
-      }
-      // FAQ
-      if (d.faq) {
-        var faqList = document.getElementById('faq-list');
-        if (faqList) {
-          faqList.innerHTML = d.faq.map(function(item) {
-            return '<div class="faq-item">' +
-              '<button class="faq-question" aria-expanded="false">' +
-              item.question + '<span class="faq-icon">+</span></button>' +
-              '<div class="faq-answer"><p>' + item.answer + '</p></div>' +
-              '</div>';
-          }).join('');
-          initFAQ();
-        }
-      }
-      // Afbeeldingen
-      if (d.images) {
-        var imgAbout = document.getElementById('img-about');
-        if (imgAbout && d.images.foto_about) imgAbout.src = d.images.foto_about;
-        var imgJaco = document.getElementById('img-jaco');
-        if (imgJaco && d.images.foto_jaco) imgJaco.src = d.images.foto_jaco;
-      }
-      // Contact
-      if (d.contact) setText('contact-intro', d.contact.intro);
+      cmsData = d;
+      applyUI();
+      applyContent(d);
     })
-    .catch(function() {});
+    .catch(function() { applyUI(); });
 
   // Active nav on scroll
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
