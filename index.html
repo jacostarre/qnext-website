@@ -946,6 +946,18 @@
 
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
+  // Netlify Identity redirect na login
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', function(user) {
+      if (!user) {
+        window.netlifyIdentity.on('login', function() {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
+<script>
   // ── CMS content laden uit content.json ──
   function setText(id, val) {
     var el = document.getElementById(id);
