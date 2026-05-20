@@ -972,7 +972,10 @@
     </div>
     <div class="about-photo">
       <div class="photo-ring">
-        <img id="img-about" src="assets/jaco.jpg" alt="Jaco van der Starre — Qnext" loading="lazy" width="560" height="560">
+        <picture>
+          <source srcset="/.netlify/images?url=/assets/jaco.jpg&w=800&h=800&fit=cover&fm=webp 1x, /.netlify/images?url=/assets/jaco.jpg&w=1200&h=1200&fit=cover&fm=webp 2x" type="image/webp">
+          <img id="img-about" src="/.netlify/images?url=/assets/jaco.jpg&w=800&h=800&fit=cover" alt="Jaco van der Starre — Qnext" loading="lazy" width="560" height="560">
+        </picture>
       </div>
     </div>
   </div>
@@ -1028,7 +1031,10 @@
 <!-- ── OVER JACO ── -->
 <section class="about-jaco" id="jaco">
   <div class="about-jaco-inner">
-    <img id="img-jaco" src="assets/jaco2.jpg" class="jaco-img" alt="Jaco van der Starre" loading="lazy" width="480" height="480" onerror="this.src='assets/jaco.jpg'">
+    <picture>
+      <source srcset="/.netlify/images?url=/assets/jaco2.jpg&w=800&h=800&fit=cover&fm=webp 1x, /.netlify/images?url=/assets/jaco2.jpg&w=1200&h=1200&fit=cover&fm=webp 2x" type="image/webp">
+      <img id="img-jaco" src="/.netlify/images?url=/assets/jaco2.jpg&w=800&h=800&fit=cover" class="jaco-img" alt="Jaco van der Starre" loading="lazy" width="480" height="480" onerror="this.src='assets/jaco.jpg'">
+    </picture>
     <div>
       <h2>Jaco van der Starre</h2>
       <p class="jaco-role" data-ui="jaco_role">Oprichter &amp; Data Analytics Consultant</p>
@@ -1228,12 +1234,26 @@
       }
     }
     if (c.contact) setText('contact-intro', c.contact.intro);
-    // Afbeeldingen (taal-onafhankelijk)
+    // Afbeeldingen (taal-onafhankelijk) — via Netlify Image CDN voor optimale grootte
+    function netlifyImg(path, w, h) {
+      return '/.netlify/images?url=' + encodeURIComponent(path) + '&w=' + w + '&h=' + h + '&fit=cover';
+    }
+    function netlifyWebp(path, w, h) {
+      return netlifyImg(path, w, h) + '&fm=webp 1x, ' + netlifyImg(path, w*1.5, h*1.5) + '&fm=webp 2x';
+    }
     if (d.images) {
       var imgAbout = document.getElementById('img-about');
-      if (imgAbout && d.images.foto_about) imgAbout.src = d.images.foto_about;
+      if (imgAbout && d.images.foto_about) {
+        imgAbout.src = netlifyImg(d.images.foto_about, 800, 800);
+        var srcAbout = imgAbout.closest('picture') && imgAbout.closest('picture').querySelector('source');
+        if (srcAbout) srcAbout.srcset = netlifyWebp(d.images.foto_about, 800, 800);
+      }
       var imgJaco = document.getElementById('img-jaco');
-      if (imgJaco && d.images.foto_jaco) imgJaco.src = d.images.foto_jaco;
+      if (imgJaco && d.images.foto_jaco) {
+        imgJaco.src = netlifyImg(d.images.foto_jaco, 800, 800);
+        var srcJaco = imgJaco.closest('picture') && imgJaco.closest('picture').querySelector('source');
+        if (srcJaco) srcJaco.srcset = netlifyWebp(d.images.foto_jaco, 800, 800);
+      }
     }
   }
 
