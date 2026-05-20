@@ -1118,19 +1118,7 @@
   <div style="margin-top:.35rem;">Zijde 428, 2771 GA Boskoop<span class="sep">|</span><a href="mailto:jaco@qnext.nl">jaco@qnext.nl</a></div>
 </footer>
 
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
-<script>
-  // Netlify Identity redirect na login
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', function(user) {
-      if (!user) {
-        window.netlifyIdentity.on('login', function() {
-          document.location.href = '/admin/';
-        });
-      }
-    });
-  }
-</script>
+<!-- Netlify Identity widget alleen in /admin geladen, niet nodig op hoofdpagina -->
 <script>
   // ── Vertalingen voor vaste UI-teksten ──
   var UI = {
